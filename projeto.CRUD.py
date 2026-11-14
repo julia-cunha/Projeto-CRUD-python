@@ -119,3 +119,113 @@ while opcao != "5":
 
     else:
         print("\nOpção inválida! Escolha entre 1 e 5.")
+
+# Versão mais atualizada com mais funcionalidades utilizando listas e dicionários:
+
+agendamentos = []
+
+# Lista fixa com as opções de atendimento
+opcoes_esp = [
+    {"esp": "Odontopediatria", "prof": "Dra. Ana (Presente)", "horario": "09:00"},
+    {"esp": "Endodontia", "prof": "Dr. Carlos (Presente)", "horario": "14:00"},
+    {"esp": "Ortodontia", "prof": "Dra. Beatriz (Presente)", "horario": "16:00"},
+    {"esp": "Clínico Geral", "prof": "Dr. João (Presente)", "horario": "10:30"}
+]
+
+while True:
+    print("\n=== CLÍNICA ODONTOLÓGICA ===")
+    print("1. Cadastrar Agendamento")
+    print("2. Listar Agendamentos")
+    print("3. Atualizar Agendamento")
+    print("4. Excluir Agendamento")
+    print("5. Sair")
+    
+    opcao = input("Escolha uma opção (1-5): ")
+
+    if opcao == "1":
+        print("\n--- NOVO CADASTRO ---")
+        nome = input("Nome completo: ")
+        cpf = input("CPF: ")
+        idade = input("Idade: ")
+        sexo = input("Sexo: ")
+        
+        # Laço para garantir escolha válida da especialidade
+        while True:
+            print("\nEspecialidades disponíveis:")
+            for i, o in enumerate(opcoes_esp):
+                print(f"{i+1}. {o['esp']} ({o['prof']} - {o['horario']})")
+            
+            escolha = input("Escolha a especialidade (1-4): ")
+            if escolha in ["1", "2", "3", "4"]:
+                obj = opcoes_esp[int(escolha) - 1]
+                break
+            print("[Erro] Opção inválida! Escolha entre 1 e 4.")
+
+        # Laço para garantir escolha válida do status
+        while True:
+            st = input("Status do atendimento - 1. Normal | 2. Urgente: ")
+            if st in ["1", "2"]:
+                status = "URGENTE" if st == "2" else "Normal"
+                break
+            print("[Erro] Digite 1 ou 2.")
+
+        # Adiciona o novo dicionário na lista de agendamentos (permite múltiplos pacientes)
+        agendamentos.append({
+            "nome": nome, 
+            "cpf": cpf, 
+            "idade": idade, 
+            "sexo": sexo,
+            "especialidade": obj["esp"], 
+            "profissional": obj["prof"],
+            "horario": obj["horario"], 
+            "status": status
+        })
+        print("\nAgendamento realizado com sucesso!")
+
+    elif opcao == "2":
+        if not agendamentos:
+            print("\nNenhum agendamento encontrado no sistema.")
+        else:
+            print("\n--- LISTA DE AGENDAMENTOS ---")
+            for i, ag in enumerate(agendamentos):
+                print(f"\n[{i+1}] Paciente: {ag['nome']}")
+                print(f"    CPF: {ag['cpf']} | Idade: {ag['idade']} | Sexo: {ag['sexo']}")
+                print(f"    Especialidade: {ag['especialidade']}")
+                print(f"    Profissional: {ag['profissional']}")
+                print(f"    Horário: {ag['horario']}")
+                print(f"    Status: {ag['status']}")
+
+    elif opcao == "3" or opcao == "4":
+        if not agendamentos:
+            print("\nNão há agendamentos cadastrados.")
+            continue
+            
+        cpf_busca = input(f"Digite o CPF do cliente para {'atualizar' if opcao=='3' else 'excluir'}: ")
+        encontrado = False
+        
+        for i, ag in enumerate(agendamentos):
+            if ag["cpf"] == cpf_busca:
+                encontrado = True
+                if opcao == "3":
+                    ag["nome"] = input(f"Novo nome ({ag['nome']}): ") or ag["nome"]
+                    ag["idade"] = input(f"Nova idade ({ag['idade']}): ") or ag["idade"]
+                    resp = input("O atendimento é urgente? (s/n): ").lower()
+                    if resp in ["s", "n"]:
+                        ag["status"] = "URGENTE" if resp == "s" else "Normal"
+                    print("\nAgendamento atualizado com sucesso!")
+                else:
+                    agendamentos.pop(i)
+                    print("\nAgendamento excluído com sucesso!")
+                break
+        
+        if not encontrado:
+            print("\nCliente não encontrado com esse CPF.")
+
+    elif opcao == "5":
+        print("\nSaindo do sistema. Até logo!")
+        break
+    else:
+        print("\nOpção inválida! Escolha entre 1 e 5.")
+
+
+
