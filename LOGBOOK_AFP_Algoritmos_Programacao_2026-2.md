@@ -110,10 +110,10 @@ Atualize a cada commit (troque ⬜ por ✅).
 | 1 | Registros dos Ciclos 01, 02, 03 e 04 | 16/11 | ✅ | ✅ |
 | 1 | Campo 01 — Instrumento de entrada | 16/11 | ✅ | ✅ |
 | 1 | Campo 02 — Aprofundamento | 16/11 | ✅ | ✅ |
-| 2 | Registros dos Ciclos 05, 06, 07 e 08 | 21/11 | ⬜ | ⬜ |
+| 2 | Registros dos Ciclos 05, 06, 07 e 08 | 21/11 | ✅ | ✅ |
 | 2 | Checkpoint Conceitual | 21/11 | ⬜ | ⬜ |
-| 2 | Campo 03 — Execução e desvios | 21/11 | ⬜ | ⬜ |
-| 2 | Campo 04 — Interação com IA | 21/11 | ⬜ | ⬜ |
+| 2 | Campo 03 — Execução e desvios | 21/11 | ✅ | ✅ |
+| 2 | Campo 04 — Interação com IA | 21/11 | ✅ | ✅ |
 | 3 | Registros dos Ciclos 09, 10, 11 e 12 | 26/11 | ⬜ | ⬜ |
 | 3 | Campo 05 — Revisão por pares nº 1 e nº 2 | 26/11 | ⬜ | ⬜ |
 | 3 | Campo 06 — Próximos passos | 26/11 | ⬜ | ⬜ |
@@ -344,8 +344,8 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 | | |
 |---|---|
-| **Nome do estudante** | _…_ |
-| **Data de realização** | _…_ |
+| **Nome do estudante** | _Júlia Ferreira Cunha_ |
+| **Data de realização** | _20/11/2026_ |
 | **Unidade curricular** | Algoritmos e Programação |
 | **Professor(a)** | Rondineli Seba Salomão |
 
@@ -389,42 +389,42 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 *AV Qualis — Grupo 2 | Sábado 21/11, 23h59*
 
 **3a. O que descobri que mudou minha compreensão do problema (mínimo 2 achados, com objeto de conhecimento associado):**
-1. _…_ — *Objeto de conhecimento:* _…_
-2. _…_ — *Objeto de conhecimento:* _…_
+1. _…_ — *:* No Campo 01 e no Campo 02 eu acreditava que as falhas do CRUD vinham apenas de erros básicos de sintaxe (como esquecer dois-pontos, iniciar variáveis com letra maiúscula ou não saber a ordem das linhas) e que assistir aos vídeos do Gustavo Guanabara somados à estrutura gerada pelo Gemini AI resolveria o código. Na prática, percebi que copiar e adaptar trechos sem planejar a sequência lógica e a validação das entradas gera inconsistências entre as operações do menu (cadastrar, listar, atualizar e excluir). — Objeto de conhecimento: Decomposição de problemas, estruturas condicionais (if/elif/else), operadores lógicos e validação de entrada._
+2. _…_ — *:* _Ao evoluir o sistema de agendamento odontológico para lidar com vários atendimentos, descobri que controlar variáveis soltas dificulta localizar e editar um paciente específico; organizar os registros em uma lista de dicionários (com chaves definidas para cada dado da consulta) torna a busca e a manutenção do CRUD muito mais seguras. — Objeto de conhecimento: Estruturas de dados compostas (listas e dicionários) e algoritmos de busca/consulta._
 3. _…_ *(opcional)*
 
 **3b. Desvio em relação ao Campo 02 (ao menos 1 — causa técnica):**
-- **Desvio:** _…_
-- **Causa técnica:** _…_
+- **Desvio:** _No Campo 02 planejei que treinar diariamente no VS Code seguindo os comandos explicados pelo Gemini AI e os vídeos do YouTube evitaria falhas na estruturação do código, mas ao implementar as operações de consulta, atualização e exclusão do CRUD odontológico ocorreram erros de execução e falhas na localização de registros._
+- **Causa técnica:** _Ausência de validação prévia das entradas do usuário (tentativa de converter ou comparar tipos incompatíveis, como str e int, e falta de padronização na comparação de texto com .strip() e .lower()), além de tentativas de acessar índices ou chaves de dicionário sem verificar antes se o registro existia na lista._
 
 **3c. Decisão de ajuste (ao menos 1) com justificativa e fonte:**
-- **Decisão:** _…_
-- **Fonte:** _…_
+- **Decisão:** _Deixar de apenas reproduzir a estrutura sugerida pela IA e passar a testar cada parte do CRUD isoladamente no VS Code com entradas válidas e inválidas, padronizando o formato dos campos de busca e incluindo verificações condicionais antes de ler, alterar ou remover qualquer agendamento._
+- **Fonte:** _Documentação oficial do Python (estruturas de controle, listas e dicionários), curso em vídeo de Python (Gustavo Guanabara) e testes práticos executados no VSCode._
 
-**Objeto de conhecimento mobilizado nesta decisão:** _…_
+**Objeto de conhecimento mobilizado nesta decisão:** _Estruturas condicionais, laços de repetição, tratamento/validação de entrada e manipulação de listas e dicionários._
 
 ### 🧩 CAMPO 04 — Interação com IA
 *AV Qualis — Grupo 2 | Sábado 21/11, 23h59 | OBRIGATÓRIO*
 
 > **Obrigatório e avaliado. Print sem análise crítica = devolução imediata. Reproduzir a IA sem questionamento = reprovado.**
 
-**4a. Ferramenta:** _…_  **Data:** _DD/MM/AAAA_
+**4a. Ferramenta:** _Gemini AI_  **Data:** _15/09/2026_
 
 **4b. Pergunta formulada (transcrita integralmente):**
 
-> _…_
+> _Estou fazendo um sistema de CRUD de agendamento em clínica odontológica em Python no VS Code e tenho dificuldade em saber onde cada função ou bloco deve ficar para o código não ficar bagunçado. Me ajude passo a passo, ensinando como usar cada função e cada parte (menu, cadastro, consulta, atualização e exclusão) aos poucos, para que eu vá implementando no meu código e testando se está funcionando antes de passar para o próximo passo._
 
 **4c. Resposta da IA (resumida em parágrafo):**
 
-> _…_
+> _A IA dividiu a construção do CRUD em etapas progressivas, explicando primeiro a estrutura do menu e o papel de cada operação (cadastrar, listar, atualizar e remover) e mostrando exemplos de como organizar a leitura de dados, as condições e as funções/blocos de cada ação para que eu implementasse uma etapa por vez e testasse no VS Code._
 
 **4d. O que aceitei — com referência ao objeto de conhecimento do componente:**
 
-> _…_
+> _Aceitei a divisão gradual do CRUD em etapas menores (menu, cadastro, listagem, atualização e exclusão) e a explicação do papel de cada parte antes de avançar, pois isso se conecta diretamente aos objetos de conhecimento de estruturas de controle condicional (if/elif/else), estruturas de repetição (while/for), listas e dicionários e organização/modularização do fluxo, ajudando a superar a dificuldade de posicionamento e clareza das funções apontada no Campo 01 e no Campo 02._
 
 **4e. O que questionei ou descartei — com argumento técnico ou fonte:**
 
-> _…_
+> _Ao implementar cada etapa no VS Code e rodar os testes, questionei e descartei trechos sugeridos pela IA que não faziam validação prévia das entradas do usuário nem verificavam a existência do registro antes de alterar ou remover — por exemplo, quando o código assumia que o usuário digitaria um número inteiro válido ou que o item/chave buscado já existia, o que provocava erro em tempo de execução (ValueError, IndexError ou KeyError) ou falhava na busca com diferença de maiúsculas/minúsculas. Com base nos testes executados no Python, na documentação oficial da linguagem e nas aulas em vídeo (Gustavo Guanabara), mantive a estrutura passo a passo, mas adicionei validações condicionais, tratamento de tipos/texto e checagem antes de manipular os dados._
 
 ## 🟠 CICLO 05 — 09/09 — Condicionais aninhadas e operadores lógicos
 
@@ -439,13 +439,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 05 — 09/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Combinar operadores lógicos (and, or, not) e condicionais aninhadas no CRUD odontológico para validar regras de agendamento sem tornar o fluxo confuso._
+2. **O que implementei (commits / arquivos / links):** _Implementação das validações de entrada e regras de opção do menu no arquivo principal do CRUD ([https://github.com/julia-cunha/Projeto-CRUD-python.git](https://github.com/julia-cunha/Projeto-CRUD-python.git)_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Condicionais aninhadas (if/elif/else) e operadores lógicos (and, or, not) aplicados à validação de dados._
+4. **Desvio ou erro encontrado + causa técnica:** _Em verificações combinadas para validar se os campos do agendamento não estavam vazios e se a opção do menu pertencia ao intervalo permitido, uma condição com or avaliou como verdadeira mesmo quando um dos campos obrigatórios estava vazio, devido à precedência entre and e or sem parênteses explícitos._
+5. **Decisão de ajuste + fonte:** _Reescrever as expressões booleanas utilizando parênteses para explicitar a ordem de avaliação e testar casos de borda no VS Code (caso de teste: entrada com nome do paciente vazio "" e horário preenchido → resultado esperado: bloquear o cadastro e exibir aviso → resultado obtido: cadastro bloqueado corretamente). Fonte: Documentação oficial do Python (precedência de operadores) e aulas de Python do Gustavo Guanabara._
+6. **Feedback recebido e o que mudei:** _Durante a revisão antes da P1 e troca de ideias com colegas, identifiquei que manter validações claras evitava repetir blocos de if desnecessários._
+7. **Próximo passo:** _Implementar o controle contínuo do menu e o percurso dos registros utilizando laços de repetição (while e for) no Ciclo 06._
 
 ## 🟠 CICLO 06 — 30/09 — Devolutiva da P1 + repetição: `for`, `while`, `break`, `continue`
 
@@ -459,13 +459,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 06 — 30/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido (inclui devolutiva da P1) e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Aplicar corretamente while e for junto com break e continue no fluxo do CRUD odontológico_
+2. **O que implementei (commits / arquivos / links):** _Estruturação do laço principal do menu (while) e dos laços de listagem/busca (for)_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estruturas de repetição (for, while) e comandos de controle de fluxo (break, continue)._
+4. **Desvio ou erro encontrado + causa técnica:** _Ao usar while para validar entradas inválidas e continue para retornar ao início do laço, o programa entrou em repetição indesejada em um dos fluxos porque a leitura da nova entrada ficou fora do bloco repetido ou antes da atualização da variável de controle._
+5. **Decisão de ajuste + fonte:** _Definir o while apenas para repetições condicionadas a estado dinâmico (menu principal e validação até entrada válida, usando break somente na opção de saída) e reservar o for para percorrer coleções com quantidade definida de elementos. Fonte: Documentação oficial do Python (while, for, break e continue) e testes práticos no VS Code._
+6. **Feedback recebido (inclui devolutiva da P1) e o que mudei:** _Revisei a lógica de controle de fluxo e reescrevi as condições de parada dos laços do CRUD para garantir que nenhuma execução ficasse presa ou pulasse etapas._
+7. **Próximo passo:** _Armazenar todos os agendamentos cadastrados em uma lista e implementar a iteração sobre ela no Ciclo 07._
 
 ## 🟠 CICLO 07 — 07/10 — Listas: armazenamento e iteração
 
@@ -479,13 +479,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 07 — 07/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Armazenar os agendamentos da clínica odontológica em uma lista dinâmica e percorrê-la com segurança nas operações de listagem, edição e exclusão._
+2. **O que implementei (commits / arquivos / links):** _Criação da estrutura de armazenamento em lista e implementação das operações de inserção, percurso e remoção._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Listas, iteração (for e enumerate), indexação e operações de lista (append, pop/remove e verificação de tamanho com len())._
+4. **Desvio ou erro encontrado + causa técnica:** _Ocorreu erro IndexError: list index out of range ao tentar atualizar ou excluir um agendamento pelo número exibido na listagem, causado por usar o número visualizado pelo usuário (iniciado em 1) diretamente como índice da lista (iniciada em 0) sem validar se 0 <= indice < len(lista)._
+5. **Decisão de ajuste + fonte:** _Ajustar o cálculo do índice (indice = opcao - 1), verificar antes se a lista não está vazia (len(agendamentos) > 0) e validar se o índice está dentro do intervalo válido antes de alterar ou remover o elemento. Fonte: Documentação oficial do Python (estruturas de dados — listas) e exercícios praticados no VS Code._
+6. **Feedback recebido e o que mudei:** _Após testar cenários de remoção com a lista vazia e com índices inexistentes, incluí mensagens claras informando quando não há consultas cadastradas, evitando interrupção abrupta do programa._
+7. **Próximo passo:** _Substituir a representação simples dos itens por dicionários (chave → valor) e aprimorar a busca/consulta no Ciclo 08._
 
 ## 🟠 CICLO 08 — 14/10 — Busca/consulta e introdução a dicionários e matrizes
 
@@ -500,13 +500,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 08 — 14/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Modelar cada agendamento odontológico como um dicionário (chave → valor) dentro da lista e tornar a busca/consulta resistente a registros inexistentes e diferenças de formatação._
+2. **O que implementei (commits / arquivos / links):** _Refatoração dos registros do CRUD para dicionários com chaves nomeadas (paciente, data, horario, procedimento) e implementação da função/bloco de busca por paciente no Projeto-CRUD-python_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Dicionários (pares chave: valor), acesso seguro a chaves, estruturas aninhadas (lista de dicionários) e algoritmos de busca/consulta._
+4. **Desvio ou erro encontrado + causa técnica:** _A busca por nome do paciente falhou quando o usuário digitava letras minúsculas ou espaços extras (ex.: "julia" não encontrava "Júlia"), e também gerou KeyError ao testar registros incompletos sem uma das chaves esperadas, pois o código acessava consulta["procedimento"] diretamente sem verificar se a chave existia._
+5. **Decisão de ajuste + fonte:** _Normalizar o texto na comparação usando .strip().lower() tanto no termo buscado quanto no valor armazenado e utilizar .get() (ou verificação in) ao ler chaves do dicionário para evitar falha em registros incompletos. Fonte: Livro Pense em Python (Allen B. Downey, cap. 11 — Dicionários) e documentação oficial do Python_
+6. **Feedback recebido e o que mudei:** _Com os testes realizados no VS Code e troca de ideias com a dupla de revisão (Sthefanny e Lícia), confirmei que usar dicionários deixou a leitura do código muito mais clara do que posições numéricas soltas na lista._
+7. **Próximo passo:** _Consolidar as operações completas de atualização (Update) e exclusão (Delete) com busca validada no Ciclo 09 (Grupo 3) e atualizar o painel de acompanhamento do Logbook._
 
 ---
 
