@@ -543,13 +543,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 09 — 21/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _ompletar as opções de atualizar (3) e excluir (4) no meu CRUD da clínica odontológica usando a lista agendamentos, enumerate() e .pop(i) sem quebrar o programa.._
+2. **O que implementei (commits / arquivos / links):** _Implementei o elif opcao == "3" or opcao == "4": no while True principal buscando pelo cpf_busca, atualizando campos com or ag["nome"] e or ag["idade"] ou removendo com agendamentos.pop(i) e break.
+3. **Objeto(s) de conhecimento mobilizado(s):** _Listas (agendamentos), dicionários (cada agendamento com nome, cpf, idade, sexo, especialidade, profissional, horario, status), laços (while True, for com enumerate), condicionais (if, elif, else, or, not) e .pop(i)._
+4. **Desvio ou erro encontrado + causa técnica:** _Se não houver agendamento na lista (not agendamentos) e tentar atualizar ou excluir, ou se remover um item com agendamentos.pop(i) sem break durante o for, a lista muda de tamanho/posição e pode gerar problema no laço ou índice; além disso, ag["cpf"] == cpf_busca exige correspondência exata do CPF digitado._
+5. **Decisão de ajuste + fonte:** _Coloquei if not agendamentos: com continue antes de pedir o cpf_busca, usei break logo após agendamentos.pop(i) e deixei "s"/"n" com .lower() para definir "URGENTE" ou "Normal". Fonte: meus testes no VS Code e consultas/anotações de Python._
+6. **Feedback recebido e o que mudei:** _Na troca com a Sthefanny e a Lícia, mantive o aviso de "Cliente não encontrado com esse CPF." quando not encontrado e o bloqueio de lista vazia para deixar claro o que aconteceu em cada tentativa._
+7. **Próximo passo:** _Continuar revisando o fluxo do menu e das operações no código sem quebrar o que já está funcionando._
 
 ### 🧩 CAMPO 05 — Registro de Revisão por Pares
 *Adaptação do **Logbook do Time** (Apêndice C) para o CRUD individual. Documento atualizado pelo **revisor**. Cada decisão técnica relevante deve ter associado o objeto de conhecimento correspondente.*
@@ -562,9 +562,9 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 | | |
 |---|---|
-| **Autor do CRUD revisado** | _nome_ |
+| **Autor do CRUD revisado** | _Sthéffany_ |
 | **Repositório revisado** | _link_ |
-| **Revisor** | _seu nome_ |
+| **Revisor** | _Júlia Ferreira Cunha_ |
 | **Unidade curricular / Semestre** | Algoritmos e Programação · 2026.2 |
 | **Ciclo / data** | _Ciclo 09 · 21/10_ |
 
@@ -572,37 +572,36 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 | ETAPA DO PROCESSO | RESPONSÁVEL | PRAZO | STATUS | DESVIO / JUSTIFICATIVA |
 |---|---|---|---|---|
-| 1. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 2. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 3. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 4. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 5. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
+ETAPA DO PROCESSO,RESPONSÁVEL,PRAZO,STATUS,DESVIO / JUSTIFICATIVA
+"1. Rodar o CRUD da colega no VS Code e testar cadastrar, listar, atualizar e excluir",Revisor (Júlia),21/10,☑ Concluída,Rodei o código no VS Code e testei o fluxo principal sem travar o ambiente.
+"2. Testar busca de item inexistente, lista vazia e entradas diferentes do padrão",Revisor (Júlia),21/10,☑ Concluída,Notei que em alguns casos a busca não avisava de forma clara quando não achava o registro.
+"3. Ler o código para ver como organizou condições, laços e estruturas de dados",Revisor (Júlia),21/10,☑ Concluída,"A lógica funciona bem, mas alguns trechos de busca/validação se repetem."
+4. Anotar os achados ligando ao conteúdo da disciplina e às fontes,Revisor (Júlia),21/10,☑ Concluída,Registrei tudo nas tabelas 5b a 5e com base no que testei.
+5. Passar o feedback para a Sthefanny com calma e mostrando como reproduzir,Revisor / Autor,22/10,☑ Concluída,"Mostrei o que está bom, o que falhou no teste e como melhorar."
 
 **5b. ANÁLISE DE INSUMOS E CRITÉRIOS DE QUALIDADE:**
 
 | RECURSO | QTDE PLANEJADA | QTDE UTILIZADA | VARIAÇÃO | JUSTIFICATIVA TÉCNICA |
-|---|---|---|---|---|
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
+
+| _Casos de teste do CRUD (cadastro, listagem, atualização e exclusão)_ | _4_ | _4_ | _0_ | _Conferir se todas as 4 funções principais do sistema rodam do começo ao fim._ |
+| _Casos de teste de falha/borda (lista vazia, busca inexistente, opção errada)_ | _3_ | _4_ | _+1_ | _Testei também variação de texto/espaço na busca para ver como o código reage._ |
+| _VS Code + Python para rodar e conferir o código_ | _1_ | _1_ | _0_ | _Precisava rodar o código de verdade para ver onde dava erro ou comportamento estranho._ |
 
 **5c. CONTROLE DE QUALIDADE:**
-- **Critério ou norma técnica:** _…_
-- **A solução atende?** ☐ Sim ☐ Parcialmente ☐ Não
+- **Critério ou norma técnica:** _Ter o CRUD funcionando (criar, listar, atualizar e excluir), tratar lista vazia/item inexistente sem quebrar o programa e validar entradas inválidas._
+- **A solução atende?** ☐ Sim ☑ Parcialmente ☐ Não(As operações principais funcionam, mas ainda dá para melhorar o tratamento quando não encontra o item ou quando o dado vem fora do padrão).
 
 **5d. GESTÃO DE RISCOS:**
-- **Risco:** _…_
-- **Estratégia de mitigação:** _…_
+- **Risco:** _Pegar uma versão desatualizada do código ou não conseguir rodar por falta de alguma entrada esperada no terminal._
+- **Estratégia de mitigação:** _Conferir o código no repositório antes de rodar, testar no terminal do VS Code e explicar passo a passo como reproduzi cada situação no feedback._
 
 **5e. RASTREABILIDADE DAS DECISÕES TÉCNICAS — COM VÍNCULO AO CONTEÚDO:**
+DATA,DECISÃO TÉCNICA,RESP.,OBJETO DE CONHECIMENTO MOBILIZADO,FUNDAMENTAÇÃO / REFERÊNCIA
+21/10/26,Checar se a lista está vazia antes de tentar atualizar ou excluir algum registro,Revisor (Júlia),Condicionais (if/else) e listas,Documentação oficial do Python (listas e controle de fluxo)
+21/10/26,Padronizar texto na busca (tirar espaços e deixar tudo minúsculo) para não falhar por digitação,Revisor (Júlia),Manipulação de strings e busca em coleções,Documentação oficial do Python (strip e lower)
+21/10/26,Tomar cuidado ao remover item durante repetição na lista para não pular elemento ou estourar índice,Revisor (Júlia),Laços de repetição (for) e remoção em listas,Livro Pense em Python (cap. sobre listas)
+21/10/26,Evitar repetir a mesma lógica de busca solta em mais de um lugar do código,Revisor (Júlia),Decomposição do problema e organização de código,Aulas de Algoritmos e Programação (Ciclos 09–10)
 
-| DATA | DECISÃO TÉCNICA | RESP. | OBJETO DE CONHECIMENTO MOBILIZADO | FUNDAMENTAÇÃO / REFERÊNCIA |
-|---|---|---|---|---|
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
 
 > **IMPORTANTE:** Decisão registrada sem objeto de conhecimento associado e sem referência é considerada **não rastreável** e não conta para a avaliação formativa. O vínculo entre processo e conteúdo é obrigatório em todas as decisões relevantes.
 
@@ -618,13 +617,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 10 — 28/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Manter o fluxo das 5 opções do menu (1 a 5) organizado dentro do meu CRUD sem misturar as condições de cadastro, listagem, atualização, exclusão e saída._
+2. **O que implementei (commits / arquivos / links):** Mantive a estrutura em while True com if, elif e else para as opções "1", "2", "3" or "4", "5" e opção inválida, usando enumerate() em opcoes_esp e agendamentos_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estruturas condicionais encadeadas (if/elif/else), operadores lógicos (or, not, in), laços (while True, for com enumerate) e listas de dicionários._
+4. **Desvio ou erro encontrado + causa técnica:** _Como o CRUD ainda está concentrado dentro do while True principal (sem divisão em funções def), errar a indentação ou colocar um break/continue no lugar errado afetava o laço externo do menu ou os laços internos de validação._
+5. **Decisão de ajuste + fonte:** _Conferir a indentação de cada bloco dentro do while True e separar bem os if/elif de cada opção do menu, deixando a divisão em funções def como um ponto a evoluir quando eu estruturar melhor o código. Fonte: meus testes no VS Code e aulas de Algoritmos e Programação._
+6. **Feedback recebido e o que mudei:** _A Lícia ajudou a conferir o fluxo do CRUD e apontou o que estava mais claro na navegação do menu; mantive a estrutura que já estava funcionando sem quebrar as opções 1 a 5._
+7. **Próximo passo:** _Estudar recursividade e comparar como funciona em relação aos laços que já uso no código._
 
 ## 🔵 CICLO 11 — 04/11 — Recursividade
 
@@ -640,35 +639,37 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 11 — 04/11
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Garantir que os laços e validações do meu CRUD de clínica odontológica funcionem sem travar nem repetir código sem necessidade, já que na turma não chegamos a estudar recursividade._
+2. **O que implementei (commits / arquivos / links):** _Mantive e revisei os laços while True (menu principal, escolha da especialidade de 1 a 4 e escolha do status 1 ou 2) e o for com enumerate() na listagem e busca por CPF._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estruturas de repetição (while e for com enumerate()), comandos de controle de fluxo (break e continue), estruturas condicionais (if, elif, else) e listas de dicionários (opcoes_esp e agendamentos)._
+4. **Desvio ou erro encontrado + causa técnica:** _Como não estudamos recursividade e o CRUD depende de laços while True e for, o risco real de erro estava em colocar break ou continue no nível errado (saindo do menu ou pulando a validação de especialidade/status) ou mexer na lista agendamentos durante o for sem encerrar o laço após .pop(i)._
+5. **Decisão de ajuste + fonte:** _Usar while True com break apenas quando a entrada é válida (escolha in ["1", "2", "3", "4"] e st in ["1", "2"]), usar continue quando not agendamentos na opção "3" ou "4", e colocar break logo após agendamentos.pop(i) na exclusão. Fonte: meus testes no VS Code, anotações das aulas e consultas de Python._
+6. **Feedback recebido e o que mudei:** _Na troca com a dupla (Sthefanny e Lícia) e na revisão do fluxo no VS Code, mantive essa estrutura iterativa por ser a que eu domino e testei no meu código._
+7. **Próximo passo:** _Revisar e fechar o código no Ciclo 12, concluir a revisão por pares nº 2 e finalizar os Campos 05, 06 e 07._
 
 ### 🧩 CAMPO 06 — Próximos passos para a defesa
 *AV Qualis — Grupo 3 | Individual | Quinta 26/11, 23h59*
 
 **6a. Decisão técnica que defendo com plena autonomia — o que aprendi que é exclusivamente meu e não consigo transferir para nenhum colega:**
 
-> _…_
+> _A decisão de usar opcoes_esp e agendamentos como listas de dicionários, validar a especialidade (1 a 4) e o status (1 ou 2) com while True + break, tratar if not agendamentos: antes de atualizar/excluir e usar agendamentos.pop(i) com break na exclusão foi construída e testada por mim no VS Code. No começo eu dependia muito de vídeos e pedia estrutura para a IA, mas fui eu que montei cada campo do dicionário e testei o fluxo do meu CRUD._
 
 **6b. Lacuna técnica e plano de ação para saná-la:**
 
-- **Lacuna:** _…_
-- **Plano de ação (passos e datas):** _…_
+- **Lacuna:** _Ainda não implementei funções (def) para dividir o código nem salvamento dos agendamentos em arquivo (então os dados de agendamentos ficam apenas em memória enquanto o programa roda), e sigo sem ter recebido a devolutiva da P1 nem a da P2._
+- **Plano de ação (passos e datas):** _
+- 15/11 a 17/11: Revisar linha por linha o meu CRUD e treinar explicar cada parte para a Defesa Técnica de 18/11.
+19/11 a 24/11: Revisar por conta própria listas, dicionários, laços, condições e arquivos para a P2 (25/11), sem depender de devolutiva da P1._
 
 **6c. Pergunta que a banca pode fazer — com resposta fundamentada (mínimo 5 linhas):**
 
-- **Pergunta:** _…_
+- **Pergunta:** _No seu CRUD, por que você usou while True com break na escolha da especialidade e do status, e por que colocou break logo depois de agendamentos.pop(i) na opção de excluir?_
 - **Resposta:**
 
-> _…_
+> _Eu usei while True com break na especialidade (1 a 4) e no status (1 ou 2) para não deixar o cadastro seguir com uma opção inválida sem avisar o usuário antes de fazer agendamentos.append(...). Já na exclusão (opcao == "4"), depois de achar o cpf_busca e remover o item com agendamentos.pop(i), colocar break encerra o laço for assim que o agendamento é excluído, evitando continuar percorrendo a lista depois de remover o elemento._
 
-**Objeto de conhecimento mobilizado:** _…_
-**Fonte:** _…_
+**Objeto de conhecimento mobilizado:** _Estruturas de repetição (while, for com enumerate), condicionais (if, in) e manipulação de listas (.append(), .pop(i), break)._
+**Fonte:** _Meu código no VS Code e documentação/exercícios de Python._
 
 ## 🔵 CICLO 12 — 11/11 — Refatoração e qualidade de código
 
@@ -686,58 +687,54 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 12 — 11/11
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Conferir e deixar mais claro o código do CRUD no VS Code, testando opções inválidas, lista vazia e CPF não encontrado._
+2. **O que implementei (commits / arquivos / links):** _Revisei mensagens de saída, validações (if not agendamentos:, not encontrado, opção inválida)_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Legibilidade de código, condicionais, laços, enumerate() e validação de entradas._
+4. **Desvio ou erro encontrado + causa técnica:** _Se o usuário digitasse opção fora de 1 a 5 no menu, 1 a 4 na especialidade ou 1 a 2 no status, ou buscasse um CPF que não existia, precisava ficar claro para quem usa que a entrada não era válida ou não foi achada._
+5. **Decisão de ajuste + fonte:** _Manter as mensagens de erro/aviso diretas ([Erro] Opção inválida! Escolha entre 1 e 4., [Erro] Digite 1 ou 2., Cliente não encontrado com esse CPF.) e o else final do menu (Opção inválida! Escolha entre 1 e 5.). Fonte: meus testes no VS Code e troca com a dupla (Sthefanny e Lícia)._
+6. **Feedback recebido e o que mudei:** _Na troca com a Sthefanny e a Lícia, confirmamos que os avisos na tela ajudam a entender o que o programa fez em cada passo._
+7. **Próximo passo:** _Fechar a revisão por pares nº 2, o Campo 07, o painel e os commits no GitHub._
 
 ### 🧩 CAMPO 05 — Registro de Revisão por Pares (revisão nº 2)
 
 | | |
 |---|---|
-| **Autor do CRUD revisado** | _nome_ |
+| **Autor do CRUD revisado** | _Sthefanny_ |
 | **Repositório revisado** | _link_ |
-| **Revisor** | _seu nome_ |
+| **Revisor** | _Júlia Ferreira Cunha_ |
 | **Ciclo / data** | _Ciclo 12 · 11/11_ |
 
 **5a. AVANÇO DO PROCESSO DE REVISÃO:**
+ETAPA DO PROCESSO,RESPONSÁVEL,PRAZO,STATUS,DESVIO / JUSTIFICATIVA
+1. Conferir se os pontos da Revisão nº 1 foram ajustados,Revisor (Júlia),11/11,☑ Concluída,Verifiquei as alterações feitas após a primeira revisão.
+"2. Testar entradas inválidas, vazias e buscas sem resultado",Revisor (Júlia),11/11,☑ Concluída,Rodei testes tentando quebrar o fluxo com entradas erradas.
+"3. Ver clareza do código, nomes e estrutura",Revisor (Júlia),11/11,☑ Concluída,O código ficou claro e fácil de testar.
+4. Registrar decisões técnicas com objeto de conhecimento e fonte,Revisor (Júlia),11/11,☑ Concluída,Preenchi a tabela 5e com o que observei.
+5. Passar o feedback final antes da Defesa Técnica,Revisor / Autor,12/11,☑ Concluída,Feedback final compartilhado com a colega.
 
-| ETAPA DO PROCESSO | RESPONSÁVEL | PRAZO | STATUS | DESVIO / JUSTIFICATIVA |
-|---|---|---|---|---|
-| 1. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 2. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 3. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 4. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
-| 5. _…_ | Revisor / Autor | _DD/MM_ | ☐ Concluída ☐ Em andamento ☐ Com desvio | _…_ |
 
 **5b. ANÁLISE DE INSUMOS E CRITÉRIOS DE QUALIDADE:**
 
 | RECURSO | QTDE PLANEJADA | QTDE UTILIZADA | VARIAÇÃO | JUSTIFICATIVA TÉCNICA |
 |---|---|---|---|---|
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ | _…_ |
+| _Testes de entradas inválidas, vazias e fora do esperado_ | _4_ | _5_ | _+1_ | _Testei um caso extra de busca/entrada para ver se o programa seguia rodando._ |
+| _Conferência de clareza do código e mensagens_ | _1_ | _1_ | _0_ | _Avaliar se o fluxo e os avisos estavam fáceis de entender._ |
+| _Execução no VS Code_ | _1_ | _1_ | _0_ | _Testar o código na prática._ |
 
 **5c. CONTROLE DE QUALIDADE:**
-- **Critério ou norma técnica:** _…_
-- **A solução atende?** ☐ Sim ☐ Parcialmente ☐ Não
+- **Critério ou norma técnica:** _O CRUD funciona sem travar em entradas inválidas ou registros não encontrados, com código claro de acompanhar._
+- **A solução atende?** ☑ Sim ☐ Parcialmente ☐ Não
 
 **5d. GESTÃO DE RISCOS:**
-- **Risco:** _…_
-- **Estratégia de mitigação:** _…_
+- **Risco:** _Alguma mudança quebrar uma opção do menu que já funcionava._
+- **Estratégia de mitigação:** _Testar cadastrar, listar, atualizar e excluir novamente depois das mudanças._
 
 **5e. RASTREABILIDADE DAS DECISÕES TÉCNICAS — COM VÍNCULO AO CONTEÚDO:**
-
-| DATA | DECISÃO TÉCNICA | RESP. | OBJETO DE CONHECIMENTO MOBILIZADO | FUNDAMENTAÇÃO / REFERÊNCIA |
-|---|---|---|---|---|
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
-| _DD/MM/AA_ | _…_ | _…_ | _…_ | _…_ |
+DATA,DECISÃO TÉCNICA,RESP.,OBJETO DE CONHECIMENTO MOBILIZADO,FUNDAMENTAÇÃO / REFERÊNCIA
+11/11/26,Conferir tratamento de entradas vazias e inválidas,Revisor (Júlia),Condicionais e validação de entrada,Documentação oficial do Python
+11/11/26,Verificar buscas e remoções quando não há item correspondente,Revisor (Júlia),"Listas, dicionários e laços",Pense em Python e testes práticos
+11/11/26,Avaliar clareza da estrutura e das mensagens do programa,Revisor (Júlia),Organização de código e E/S,Aulas de Algoritmos e Programação
+11/11/26,Garantir que o menu continue rodando após opção inválida,Revisor (Júlia),while e estruturas condicionais,Documentação oficial do Python
 
 ### 🧩 CAMPO 07 — Evolução conceitual
 *AV Qualis — Grupo 3 | Individual | Quinta 26/11, 23h59*
@@ -746,30 +743,30 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **7a. O que eu pensava no início do ciclo (com base no Campo 01 — registrar a hipótese inicial e os objetos de conhecimento que achava conhecer):**
 
-> _…_
+> _No Campo 01, eu achava que o principal era entender variáveis, reconhecer padrões e separar entrada, processamento e saída (como na atividade do misto), e tinha dúvida de qual era o papel de cada função e onde colocar cada parte do código para não ficar confuso. Na minha hipótese inicial, eu achava que os erros vinham principalmente de esquecer vírgula, dois-pontos, colocar letra maiúscula onde não devia ou falta de prática em Python, e que assistir aos vídeos do Gustavo Guanabara e pedir a estrutura para o Gemini AI resolveria._
 
 **7b. O que aprendi — conceitos, princípios ou relações técnicas que não dominava no início e que agora consigo explicar com precisão (mínimo 3 objetos de conhecimento):**
 
 | OBJETO DE CONHECIMENTO | O QUE EU NÃO DOMINAVA | O QUE APRENDI E CONSIGO DEMONSTRAR | EVIDÊNCIA (campo do Logbook onde aparece) |
 |---|---|---|---|
-| _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ | _…_ |
+| _Listas e dicionários_ | _Não sabia guardar vários campos de um mesmo cadastro sem bagunçar ou usar variáveis soltas._ | _Montei opcoes_esp e agendamentos como listas de dicionários (nome, cpf, idade, sexo, especialidade, profissional, horario, status), acessando por chave, usando enumerate(), .append() e .pop(i)._ | _Campo 03, Ciclos 07, 08 e 09_ |
+| _Laços (while, for) e condições (if/elif/else, and, or, not)_ | _Errava sintaxe básica (como :) e não sabia bem como validar escolhas e repetições sem travar._ | _Uso while True com break e continue no menu e nas validações de especialidade (1–4) e status (1–2), for com enumerate() para listar/buscar e or ag["nome"] na atualização._ | _Ciclos 04, 05, 06, 09 e 10_ |
+| _Controle de fluxo e remoção segura em lista_ | _Não sabia lidar com lista vazia, CPF não encontrado ou remoção de item durante percurso._ | _Coloquei if not agendamentos: com continue, flag encontrado com Cliente não encontrado com esse CPF. e break após agendamentos.pop(i)._ | _…Ciclo 09, Ciclo 12 e Campo 06_ |
 
 **7c. Conceitos que precisei corrigir ao longo do ciclo — onde eu estava equivocado e o que o corrigiu (Fechamento Teórico, pesquisa, Peer Review, arguição):**
 
-1. **Equívoco:** _…_ — **Correção:** _…_
-   **O que corrigiu:** _…_
-2. **Equívoco:** _…_ — **Correção:** _…_
-   **O que corrigiu:** _…_
+1. **Equívoco:** _Achar que pegar a estrutura do código na IA ou assistir vídeo e reproduzir no VS Code já deixava o CRUD pronto sem erro._ — **Correção:** _Vi que o código só funciona de verdade quando eu testo no VS Code, valido entradas e trato casos como lista vazia, CPF não encontrado e remoção com .pop(i)._
+   **O que corrigiu:** _Testar o código no VS Code, análise no Campo 04 e troca com a Sthefanny e a Lícia (mesmo sem ter recebido devolutiva da P1 nem da P2)._
+2. **Equívoco:** _Achar que só erros de digitação/sintaxe (como dois-pontos ou maiúscula) causavam os problemas do código._ — **Correção:** _Percebi que a lógica das condições, o controle dos laços while/for e como os dados ficam organizados na lista de dicionários são decisivos para o programa não falhar._
+   **O que corrigiu:** _Aulas, Pense em Python, revisão por pares e testes no CRUD._
 
 **7d. Transferência — como este aprendizado se aplica a um contexto diferente do problema trabalhado (ao menos 1 exemplo concreto da área de formação):**
 
-> _…_
+> _Em Engenharia de Software, organizar dados estruturados com chaves claras, validar entradas antes de avançar e tratar casos vazios ou inexistentes se aplica a outros sistemas — por exemplo, um sistema de atendimento, cadastro ou controle de estoque. Em vez de deixar dados soltos ou aceitar qualquer entrada sem checar, o raciocínio de validar escolhas e manter cada registro estruturado ajuda a evitar erros e facilita manter o sistema._
 
 **7e. Avaliação honesta do próprio percurso — o que ainda não domino e preciso aprofundar após este ciclo:**
 
-> _…_
+> _Hoje consigo entender melhor a lógica do meu código, usar if/elif/else, laços while e for, enumerate() e listas de dicionários no VS Code e no GitHub, mesmo sem ter recebido devolutiva da P1 ou da P2. Ainda preciso praticar dividir o código em funções (def), salvar os dados em arquivo para não perder ao fechar o programa e aprofundar o tratamento de erros._
 
 ---
 
@@ -808,7 +805,7 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 | | |
 |---|---|
-| **Nome** | _…_ |
+| **Nome** | _Júlia Ferreira Cunha_ |
 | **Curso / Time / Função** | _…_ |
 
 <details>
@@ -835,10 +832,10 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 ### Registro do Encerramento — 18/11
-1. **O que apresentei/defendi (em 1 frase):** _…_
-2. **Objeto(s) de conhecimento que a banca mais explorou:** _…_
-3. **Pergunta que mais me desafiou e como respondi:** _…_
-4. **O que levo deste semestre para o próximo módulo:** _…_
+1. **O que apresentei/defendi (em 1 frase):** _Apresentei meu CRUD baseado em um Sistema de Atendimento de uma clínica e como ele foi estruturado, minhas principais dificuldades e como foi o processo de construção dele._
+2. **Objeto(s) de conhecimento que a banca mais explorou:** _Não houve tempo suficiente para realização de perguntas_
+3. **Pergunta que mais me desafiou e como respondi:** _Não houve perguntas que me desafiaram já que não houve tempo para perguntas_
+4. **O que levo deste semestre para o próximo módulo:** Levo uma base muito mais clara de lógica, condições, laços e listas de dicionários, além de entender que errar faz parte do processo quando a gente testa e corrige por conta própria para construir sistemas cada vez mais bem estruturados nos próximos períodos._
 
 ---
 
