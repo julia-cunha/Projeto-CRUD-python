@@ -114,11 +114,11 @@ Atualize a cada commit (troque ⬜ por ✅).
 | 2 | Checkpoint Conceitual | 21/11 | ⬜ | ⬜ |
 | 2 | Campo 03 — Execução e desvios | 21/11 | ✅ | ✅ |
 | 2 | Campo 04 — Interação com IA | 21/11 | ✅ | ✅ |
-| 3 | Registros dos Ciclos 09, 10, 11 e 12 | 26/11 | ⬜ | ⬜ |
-| 3 | Campo 05 — Revisão por pares nº 1 e nº 2 | 26/11 | ⬜ | ⬜ |
-| 3 | Campo 06 — Próximos passos | 26/11 | ⬜ | ⬜ |
-| 3 | Campo 07 — Evolução conceitual | 26/11 | ⬜ | ⬜ |
-| 🏁 | Defesa Técnica | 18/11 | ⬜ | — |
+| 3 | Registros dos Ciclos 09, 10, 11 e 12 | 26/11 | ✅ | ✅ |
+| 3 | Campo 05 — Revisão por pares nº 1 e nº 2 | 26/11 | ✅ | ✅ |
+| 3 | Campo 06 — Próximos passos | 26/11 | ✅ | ✅ |
+| 3 | Campo 07 — Evolução conceitual | 26/11 | ✅ | ✅ |
+| 🏁 | Defesa Técnica | 18/11 | ✅ | — |
 
 ---
 
@@ -596,11 +596,11 @@ ETAPA DO PROCESSO,RESPONSÁVEL,PRAZO,STATUS,DESVIO / JUSTIFICATIVA
 - **Estratégia de mitigação:** _Conferir o código no repositório antes de rodar, testar no terminal do VS Code e explicar passo a passo como reproduzi cada situação no feedback._
 
 **5e. RASTREABILIDADE DAS DECISÕES TÉCNICAS — COM VÍNCULO AO CONTEÚDO:**
-DATA,DECISÃO TÉCNICA,RESP.,OBJETO DE CONHECIMENTO MOBILIZADO,FUNDAMENTAÇÃO / REFERÊNCIA
-21/10/26,Checar se a lista está vazia antes de tentar atualizar ou excluir algum registro,Revisor (Júlia),Condicionais (if/else) e listas,Documentação oficial do Python (listas e controle de fluxo)
-21/10/26,Padronizar texto na busca (tirar espaços e deixar tudo minúsculo) para não falhar por digitação,Revisor (Júlia),Manipulação de strings e busca em coleções,Documentação oficial do Python (strip e lower)
-21/10/26,Tomar cuidado ao remover item durante repetição na lista para não pular elemento ou estourar índice,Revisor (Júlia),Laços de repetição (for) e remoção em listas,Livro Pense em Python (cap. sobre listas)
-21/10/26,Evitar repetir a mesma lógica de busca solta em mais de um lugar do código,Revisor (Júlia),Decomposição do problema e organização de código,Aulas de Algoritmos e Programação (Ciclos 09–10)
+DATA|DECISÃO TÉCNICA|RESP.|OBJETO DE CONHECIMENTO MOBILIZADO|FUNDAMENTAÇÃO / REFERÊNCIA|
+21/10/26|Checar se a lista está vazia antes de tentar atualizar ou excluir algum registro|Revisor (Júlia)|Condicionais (if/else) e listas|Documentação oficial do Python (listas e controle de fluxo)|
+21/10/26|Padronizar texto na busca (tirar espaços e deixar tudo minúsculo) para não falhar por digitação|Revisor (Júlia)|Manipulação de strings e busca em coleções|Documentação oficial do Python (strip e lower)|
+21/10/26|Tomar cuidado ao remover item durante repetição na lista para não pular elemento ou estourar índice|Revisor (Júlia)|Laços de repetição (for) e remoção em listas|Livro Pense em Python (cap. sobre listas)|
+21/10/26|Evitar repetir a mesma lógica de busca solta em mais de um lugar do código|,Revisor (Júlia)|Decomposição do problema e organização de código|Aulas de Algoritmos e Programação (Ciclos 09–10)|
 
 
 > **IMPORTANTE:** Decisão registrada sem objeto de conhecimento associado e sem referência é considerada **não rastreável** e não conta para a avaliação formativa. O vínculo entre processo e conteúdo é obrigatório em todas as decisões relevantes.
